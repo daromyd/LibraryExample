@@ -50,14 +50,12 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            maven(MavenPublication) {
-                groupId = 'ocean.inovasion.mylibrary'
-                artifactId = 'sample'
-                version = "1.0"
-
-                pom {
-                    description = 'A description of my library'
-                }
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.daromyd'
+                artifactId = 'libraryExample'
+                version = '1.0'
             }
         }
     }
